@@ -1,0 +1,16 @@
+spring:
+  application:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: ${FORGEROCK_ISS}
+          audience: maerskRestApi
+          jwk-set-uri: ${FORGEROCK_KEYSTORE}
+          jwk-set-ttl: 300
+          jws-algorithm: RS256
+          secret-key: ${JWT_SECRET_KEY}
+
+logging:
+  level:
+    root: INFO
